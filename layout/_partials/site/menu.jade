@@ -11,7 +11,7 @@
 					if theme.menu
 						each menu, name in theme.menu
 							li.waves-effect
-								a(href=menu)
+								a(href=url_for(menu))
 									= name
 					li
 						a.dropdown-button(href='#!' data-activates='dropdown')
