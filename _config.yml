@@ -70,10 +70,10 @@ open_graph:
 # Google Analytics key
 #
 # Example:
-# google_analytics: UA-17195899-3
+# google_analytics: UA-XXXXXXXX-Y
 ######
 
-google_analytics: UA-17195899-3
+google_analytics: UA-17195899-5
 
 ######
 # Social buttons
