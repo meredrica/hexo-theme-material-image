@@ -1,7 +1,9 @@
 extends base
 
 block head_title
-	= page.title+ ' ' + page.description
+	= page.title
+	if page.description
+		= ' ' + page.description
 
 block body_content
 	- post = page
