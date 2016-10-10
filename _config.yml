@@ -28,8 +28,8 @@ color:
 ######
 
 menu:
-  Writing: /tags/writing
-  Martial Arts: /tags/martial-arts
+  Writing: tags/writing
+  Martial Arts: tags/martial-arts
   Hexo.io: https://hexo.io
 
 
