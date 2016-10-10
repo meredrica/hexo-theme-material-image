@@ -1,0 +1,13 @@
+.card.hoverable
+	.card-content
+		include ../_meta
+		b.card-title
+			a(href=url_for(post.path))
+				= post.title
+				if (post.subtitle)
+					small!= ' ' + post.subtitle
+		hr
+		include _post_body
+
+	if(post.more)
+		include _actions

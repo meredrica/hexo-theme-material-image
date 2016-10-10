@@ -1,0 +1,19 @@
+title
+	block head_title
+		= config.title
+
+!= css('https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css')
+!= css('https://use.fontawesome.com/aca5d47a61')
+link(type='text/css' rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css' media='screen,projection')
+//- can't use CSS helper. it adds .css
+link(rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons')
+// - open graph data
+	let options = theme.open_graph ? theme.open_graph : {};
+	options.image = page.photos ? page.photos[0] : theme.image;
+
+	if (page.image) {
+		options.image = page.image;
+	}
+	options.title = page.title
+
+!= open_graph(options)

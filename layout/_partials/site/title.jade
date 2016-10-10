@@ -1,0 +1,28 @@
+-
+	let title = '';
+	let subtitle = '';
+	let css_class = post.color ? post.color : theme.color.title
+	if(is_post()) {
+		title = post.title;
+		subtitle = post.description;
+	} else if(is_tag()) {
+		title = 'Posts tagged ' + page.tag
+		subtitle = ''
+		if (theme.tags && theme.tags[page.tag]) {
+			let info = theme.tags[page.tag];
+			title = info.title ? info.title : title;
+			subtitle = info.description ? info.description : subtitle;
+			css_class = info.color ? info.color : css_class;
+		}
+	} else {
+		title = config.title;
+		subtitle = config.description;
+	}
+
+.col.s12
+	.row
+		h1.center-align.valign(class=css_class)
+			= title
+		h2.center-align.valign(class=css_class)
+			= subtitle
+

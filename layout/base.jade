@@ -1,0 +1,21 @@
+doctype html
+html
+
+	head
+		include _partials/site/head
+
+	body
+		- post = page
+		include _partials/site/menu
+		include _partials/site/image
+		include _partials/site/title
+
+		.container
+			.col.s12
+				block body_content
+
+		if (is_post() == false)
+			include _partials/site/pagination
+
+		include _partials/site/footer
+		include _partials/site/javascript

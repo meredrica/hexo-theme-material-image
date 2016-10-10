@@ -1,0 +1,29 @@
+footer.page-footer(class=theme.color.base)
+	if theme.social
+		.container
+			.row.center-align
+				//- social media links
+				-
+					let socials = [];
+					let values = []
+					for (let prop in theme.social) {
+						if (theme.social[prop]) {
+							socials.push({
+								class: prop,
+								link: theme.social[prop]
+							});
+						}
+					}
+				ul.pagination
+					for social in socials
+						li.waves-effect
+							a.white-text(href=social.link target='_blank')
+								i.fa.fa-lg(class='fa-'+ social.class)
+
+
+	.footer-copyright
+		.container.center-align
+				.white-text
+					!= ' &copy; ' + config.author + ' generated with '
+					a(href='https://hexo.io') hexo.io 
+					| using my own template.

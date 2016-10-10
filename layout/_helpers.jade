@@ -1,0 +1,13 @@
+-
+	// tag helper function
+	function tags(item) {
+		let tags = [];
+		item.tags.forEach(function(tag) {
+			tags.push( {
+					name: tag.name,
+					path: tag.path
+				}
+			);
+		});
+		return _.uniq(tags.sort());
+	};

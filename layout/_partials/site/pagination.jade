@@ -1,0 +1,46 @@
+-
+	let prev_class = 'disabled';
+	let prev_href = '#!';
+
+	if(page.prev) {
+		prev_class = 'waves-effect';
+		prev_href = url_for(page.prev_link);
+	}
+
+	let next_class = 'disabled';
+	let next_href = '#!';
+
+	if (page.next) {
+		next_class = 'waves-effect';
+		next_href = url_for(page.next_link);
+	}
+
+if page.total > 1
+	.col.s12
+		.row
+			ul.pagination.center-align
+				li(class=prev_class)
+					a(href= prev_href)
+						i.material-icons= 'chevron_left'
+
+				each _,num in Array(page.total + 1)
+					-
+						let li_class = 'waves-effect';
+						if (num == page.current) {
+							li_class = li_class + ' active ' + theme.color.base;
+						}
+					li(class= li_class) 
+						if num === 1
+								a(href=url_for(''))= num
+						else if num !== 0
+								-
+									let dir = config.pagination_dir;
+									if(is_tag()) {
+										dir = config.tag_dir + '/' +  page.tag.replace(' ','-') + '/' + dir;
+									}
+
+								a(href=url_for( dir + '/'+num))= num
+
+				li(class=next_class)
+					a(href= next_href)
+						i.material-icons= 'chevron_right'

@@ -1,0 +1,42 @@
+.navbar-fixed
+	nav(class=theme.color.base)
+		.nav-wrapper
+			.row
+				.col.s12
+					a.brand-logo(href='/')!= config.title 
+				a.button-collapse.menu-button-nav(href='#' data-activates='mobile')
+					i.material-icons menu
+
+				ul.right.hide-on-med-and-down
+					if theme.menu
+						each menu, name in theme.menu
+							li.waves-effect
+								a(href=menu)
+									= name
+					li
+						a.dropdown-button(href='#!' data-activates='dropdown')
+							| all tags
+							i.material-icons.right arrow_drop_down
+					li.waves-effect
+						a(href=url_for('atom.xml'))
+							i.material-icons rss_feed
+					li.waves-effect
+						a(href=url_for('feed.json'))
+							i.material-icons code
+
+				ul.side-nav#mobile
+					if theme.menu
+						each menu, name in theme.menu
+							li.waves-effect
+								a(href=menu)
+									= name
+						li.divider
+					each tag in site.tags.sort('name').data
+						li.waves-effect
+							a(href=url_for(config.tag_dir + '/' + tag.name.replace(' ','-')))= tag.name
+						
+
+	ul.dropdown-content#dropdown
+		each tag in site.tags.sort('name').data
+			li.waves-effect
+				a(class=theme.color.action href=url_for(config.tag_dir + '/' + tag.name.replace(' ','-')))= tag.name

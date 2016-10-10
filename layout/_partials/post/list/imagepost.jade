@@ -1,0 +1,18 @@
+.card.hoverable.large
+	.card-image
+		a(href=url_for(post.path))
+			img(src=post.image)
+
+			.card-title
+				b(class= post.dark ? theme.color.title_dark : theme.color.title)
+					= post.title
+					if (post.subtitle)
+						br
+						small!= post.subtitle
+		
+
+	.card-content
+		include ../_meta
+		include _post_body
+
+	include _actions

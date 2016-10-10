@@ -1,0 +1,95 @@
+# Post variables that are supported:
+#   title = Post title (first line)
+#   description = subtitle (second line) default: none
+#   color = text color for the title default: theme.color.title
+#   image = background image. default: theme.image
+
+
+######
+# Theme Settings
+######
+image: images/cover.jpg # Gloabl Image used in the header
+
+color:
+  base: grey darken-1 # base color
+  action: blue-text # link color
+  title: white-text # title text
+
+######
+# Menu that is displayed in the header
+# Key is the text displayed
+# Value is the link
+#
+# Example:
+# menu:
+#  Writing: /tags/writing
+######
+
+menu:
+  Writing: /tags/writing
+  Martial Arts: /tags/martial-arts
+
+
+######
+# custom tag styling
+# supported attributes:
+#   title: custom tag title. default: Posts tagged with <tag>
+#   description: custom tag subline. default: none
+#   color = text color for the title default: theme.color.title
+#   image = background image. default: theme.image
+#
+# Example:
+# tags:
+#   martial arts:
+#    title: Martial Arts
+#    description: Never stop practicing
+#    color: grey-text
+#    image: images/martial_arts.jpg
+######
+
+tags:
+  martial arts:
+    title: Martial Arts
+    description: Never stop practicing
+    color: grey-text
+    image: images/martial_arts.jpg
+
+######
+# Open graph data that is directly passed to the opengraph() function
+#
+# Example:
+# open_graph:
+#  twitter_id: meredrica
+######
+
+open_graph:
+  twitter_id: meredrica
+  google_plus: https://plus.google.com/+FlorianWestreicher
+
+######
+# Google Analytics key
+#
+# Example:
+# google_analytics: UA-17195899-3
+######
+
+google_analytics: UA-17195899-3
+
+######
+# Social buttons
+# each key must match a font-awesome css icon class
+# value must be the link
+#
+# Example:
+# social:
+#   github: https://github.com/meredrica
+######
+
+social:
+  github: https://github.com/meredrica
+  stack-exchange: https://stackexchange.com/users/316953/meredrica
+  facebook-official: https://www.facebook.com/meredrica
+  xing: https://www.xing.com/profile/Florian_Westreicher
+  google-plus: https://plus.google.com/+FlorianWestreicher
+  linkedin: https://www.linkedin.com/in/florian-westreicher-70aa0260
+  # twitter: https://twitter.com/meredrica

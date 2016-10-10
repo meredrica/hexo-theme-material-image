@@ -1,0 +1,10 @@
+.parallax-container.image-parallax
+	-
+		let img = page.image ? page.image : theme.image;
+		if(is_tag()) {
+			if (theme.tags && theme.tags[page.tag]) {
+				let info = theme.tags[page.tag];
+				img = info.image ? info.image : img;
+			}
+		}
+	!= image_tag(img)
