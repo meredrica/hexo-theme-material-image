@@ -1,12 +1,12 @@
 .card.hoverable
 	.card-content
-		.col.s8
+		.col.s8.m10
 			b.card-title.truncate
 				a(href=url_for(post.path))
 					= post.title
 					if (post.subtitle)
 						small!= ' ' + post.subtitle
-		.col.s4.right.center-align
+		.col.s4.m2.right.center-align
 			include ../_meta
 		hr
 		include _post_body
