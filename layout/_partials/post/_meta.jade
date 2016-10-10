@@ -1,6 +1,7 @@
 include ../../_helpers.jade
-p
-	b= post.date.format('DD. MM. YYYY')
+.center-align
+	p
+		b= post.date.format('DD. MM. YYYY')
 
-each tag in tags(post)
-	a.chip(href=url_for(tag.path) class=theme.color.action)= tag.name
+	each tag in tags(post)
+		a.chip.truncate(href=url_for(tag.path) class=theme.color.action)= tag.name
