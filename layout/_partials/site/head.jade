@@ -4,10 +4,25 @@ title
 
 != css('https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css')
 != css('https://use.fontawesome.com/aca5d47a61')
+
 link(type='text/css' rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css' media='screen,projection')
+
 //- can't use CSS helper. it adds .css
 link(rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons')
-// - open graph data
+
+//- fav icon
+-
+	let fav = page.favicon ? page.favicon : theme.favicon;
+	if(is_tag()) {
+		if (theme.tags && theme.tags[page.tag]) {
+			let info = theme.tags[page.tag];
+			fav = info.favicon ? info.favicon : fav;
+		}
+	}
+link(rel='icon' href=url_for(fav))
+
+//- open graph data
+-
 	let options = theme.open_graph ? theme.open_graph : {};
 	options.image = page.photos ? page.photos[0] : theme.image;
 

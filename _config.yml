@@ -3,12 +3,14 @@
 #   description = subtitle (second line) default: none
 #   color = text color for the title default: theme.color.title
 #   image = background image. default: theme.image
+#   favicon = favicon to use. default: theme.favicon 
 
 
 ######
 # Theme Settings
 ######
 image: images/cover.jpg # Gloabl Image used in the header
+favicon: https://s.gravatar.com/avatar/cae2a9c26fee7c96b5b9d13352d7c3b5 # Favicon
 
 color:
   base: grey darken-1 # base color
@@ -46,6 +48,7 @@ menu:
 #    description: Never stop practicing
 #    color: grey-text
 #    image: images/martial_arts.jpg
+#    favicon: images/martial_arts.jpg
 ######
 
 tags:
@@ -54,6 +57,7 @@ tags:
     description: Never stop practicing
     color: grey-text
     image: images/martial_arts.jpg
+    favicon: images/martial_arts.jpg
 
 ######
 # Open graph data that is directly passed to the opengraph() function
