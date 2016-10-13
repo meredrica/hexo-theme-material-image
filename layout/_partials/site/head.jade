@@ -32,8 +32,8 @@ link(rel='icon' href=url_for(fav))
 
 	let options = theme.open_graph ? theme.open_graph : {};
 	options.image = options.image ? options.image : image;
-	options.description = options.description? description;
-	options.title = options.title? options.title : page.title
+	options.description = options.description ? options.description : description;
+	options.title = options.title ? options.title : page.title;
 
 
 != open_graph(options)
