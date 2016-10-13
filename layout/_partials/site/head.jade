@@ -30,7 +30,8 @@ link(rel='icon' href=url_for(fav))
 		}
 	let description = page.description ? page.description : page.excerpt;
 
-	let options = theme.open_graph ? theme.open_graph : {};
+	// deep clone the object so we don't use the original object
+	let options = theme.open_graph ? JSON.parse(JSON.stringify(theme.open_graph)) : {};
 	options.image = options.image ? options.image : image;
 	options.description = options.description ? options.description : description;
 	options.title = options.title ? options.title : page.title;
