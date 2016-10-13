@@ -14,28 +14,32 @@ meta(name='viewport' content='width=device-width, initial-scale=1.0')
 //- fav icon
 -
 	let fav = page.favicon ? page.favicon : theme.favicon;
-	if(is_tag()) {
-		if (theme.tags && theme.tags[page.tag]) {
-			let info = theme.tags[page.tag];
+	let image = page.photos ? page.photos[0] : theme.image;
+
+	// Tag specific settings.
+	if (theme.tags && theme.tags[page.tag]) {
+		info = theme.tags[page.tag];
+		if(is_tag()) {
+			image = info.image ? info.image : image;
 			fav = info.favicon ? info.favicon : fav;
 		}
 	}
-link(rel='icon' href=url_for(fav))
+	
+	// page specific image
+	if (page.image) {
+		image = page.image;
+	}
 
-//- open graph data
--
-	let image = page.photos ? page.photos[0] : theme.image;
-		if (page.image) {
-			image = page.image;
-		}
-	let description = page.description ? page.description : page.excerpt;
-
-	// deep clone the object so we don't use the original object
+	// opengraph data
+	// the options are deep cloned so we don't use the original settings from the user or set them during generation
 	let options = theme.open_graph ? JSON.parse(JSON.stringify(theme.open_graph)) : {};
+
+	let description = page.description ? page.description : page.excerpt;
 	options.image = options.image ? options.image : image;
 	options.description = options.description ? options.description : description;
 	options.title = options.title ? options.title : page.title;
 
+link(rel='icon' href=url_for(fav))
 
 != open_graph(options)
 if url_for(options.image).startsWith('https')
