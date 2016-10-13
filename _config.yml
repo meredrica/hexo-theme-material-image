@@ -12,6 +12,12 @@
 image: images/cover.jpg # Gloabl Image used in the header
 favicon: https://s.gravatar.com/avatar/cae2a9c26fee7c96b5b9d13352d7c3b5 # Favicon
 
+# used in footer
+copyright: |
+  <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+    <img alt="Creative Commons License" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" style="vertical-align: middle"/>
+  </a>
+
 color:
   base: grey darken-1 # base color
   action: blue-text # link color

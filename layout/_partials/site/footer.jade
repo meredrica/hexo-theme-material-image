@@ -23,8 +23,12 @@ footer.page-footer(class=theme.color.base)
 
 	.footer-copyright
 		.container.center-align
-				.white-text
-					!= ' &copy; ' + config.author + ' generated with '
-					a(href='https://hexo.io') hexo.io 
-					| using
-					a(href='https://github.com/meredrica/hexo-theme-material-image') hexo-theme-material-image
+			div(class=theme.color.title)
+				if (theme.copyright)
+					!= theme.copyright
+				else
+					!= ' &copy; ' + config.author
+				!= '&nbsp; generated with '
+				a(href='https://hexo.io') hexo.io
+				!= ' using '
+				a(href='https://github.com/meredrica/hexo-theme-material-image') hexo-theme-material-image
