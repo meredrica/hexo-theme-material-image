@@ -19,10 +19,12 @@
 		subtitle = config.description;
 	}
 
-.col.s12
-	.row
-		h1.center-align.valign(class=css_class)
-			= title
-		h2.center-align.valign(class=css_class)
-			= subtitle
+.row
+	h1.center-align.valign.hide-on-small-only(class=css_class)= title
+	h1.center-align.valign.hide-on-med-and-up(class=css_class)
+		small= title
+	if subtitle
+		h2.center-align.valign.hide-on-small-only(class=css_class)= subtitle
+		h2.center-align.valign.hide-on-med-and-up(class=css_class)
+			small= subtitle
 
