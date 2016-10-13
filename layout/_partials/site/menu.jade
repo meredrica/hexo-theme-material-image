@@ -27,16 +27,18 @@
 				ul.side-nav#mobile
 					if theme.menu
 						each menu, name in theme.menu
-							li.waves-effect
+							li
 								a(href=menu)
 									= name
 						li.divider
+					li
+						a.subheader| all tags
 					each tag in site.tags.sort('name').data
-						li.waves-effect
+						li
 							a(href=url_for(config.tag_dir + '/' + tag.name.replace(' ','-')))= tag.name
 						
 
-	ul.dropdown-content#dropdown
-		each tag in site.tags.sort('name').data
-			li.waves-effect
-				a(class=theme.color.action href=url_for(config.tag_dir + '/' + tag.name.replace(' ','-')))= tag.name
+ul.dropdown-content#dropdown
+	each tag in site.tags.sort('name').data
+		li
+			a(class=theme.color.action href=url_for(config.tag_dir + '/' + tag.name.replace(' ','-')))= tag.name
