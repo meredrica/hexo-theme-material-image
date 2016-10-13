@@ -24,17 +24,17 @@ link(rel='icon' href=url_for(fav))
 
 //- open graph data
 -
-	let options = theme.open_graph ? theme.open_graph : {};
-	options.image = page.photos ? page.photos[0] : theme.image;
-	options.description = page.description;
+	let image = page.photos ? page.photos[0] : theme.image;
+		if (page.image) {
+			image = page.image;
+		}
+	let description = page.description ? page.description : page.excerpt;
 
-	if (page.image) {
-		options.image = page.image;
-	}
-	if(page.excerpt) {
-		options.description = page.excerpt;
-	}
-	options.title = page.title
+	let options = theme.open_graph ? theme.open_graph : {};
+	options.image = options.image ? options.image : image;
+	options.description = options.description? description;
+	options.title = options.title? options.title : page.title
+
 
 != open_graph(options)
 if url_for(options.image).startsWith('https')
