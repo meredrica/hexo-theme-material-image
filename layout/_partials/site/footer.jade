@@ -28,7 +28,6 @@ footer.page-footer(class=theme.color.base)
 					!= theme.copyright
 				else
 					!= ' &copy; ' + config.author
-				!= '&nbsp; generated with '
-				a(href='https://hexo.io') hexo.io
-				!= ' using '
-				a(href='https://github.com/meredrica/hexo-theme-material-image') hexo-theme-material-image
+				|  using
+				a(href='https://github.com/meredrica/hexo-theme-material-image')
+					|  hexo-theme-material-image
