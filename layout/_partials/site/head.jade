@@ -26,10 +26,18 @@ link(rel='icon' href=url_for(fav))
 -
 	let options = theme.open_graph ? theme.open_graph : {};
 	options.image = page.photos ? page.photos[0] : theme.image;
+	options.description = page.description;
 
 	if (page.image) {
 		options.image = page.image;
 	}
+	if(page.excerpt) {
+		options.description = page.excerpt;
+	}
 	options.title = page.title
 
 != open_graph(options)
+if url_for(options.image).startsWith('https')
+	meta(property='og:image:secure_url' content=url_for(options.image))
+else if url_for(options.image).startsWith('http') === false && config.url.startsWith('https')
+	meta(property='og:image:secure_url' content=config.url + '/'+ options.image)
