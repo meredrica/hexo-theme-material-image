@@ -28,7 +28,7 @@
 					if theme.menu
 						each menu, name in theme.menu
 							li
-								a(href=menu)
+								a(href=url_for(menu))
 									= name
 						li.divider
 					li
